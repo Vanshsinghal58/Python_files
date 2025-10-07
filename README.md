@@ -1,4 +1,25 @@
+import random
+import string
 
+def generate_password(length):
+    
+    characters = string.ascii_letters + string.digits + string.punctuation
+    
+    
+    password = ''.join(random.choice(characters) for _ in range(length))
+    
+    return password
+
+
+try:
+    length = int(input("Enter desired password length: "))
+    if length <= 0:
+        print("Please enter a positive number.")
+    else:
+        password = generate_password(length)
+        print("\nGenerated Password:", password)
+except ValueError:
+    print("Invalid input! Please enter a number.")
 num1 = float(input("Enter the first number: "))
 num2 = float(input("Enter the second number: "))
 
